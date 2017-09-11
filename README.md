@@ -1,6 +1,6 @@
-* ### Permissions
+* ## Permissions
 
-* ## Normal permissions:
+* ### Normal permissions:
 
 * ACCESS_LOCATION_EXTRA_COMMANDS
 * ACCESS_NETWORK_STATE
@@ -37,7 +37,7 @@
 * WAKE_LOCK
 * WRITE_SYNC_SETTINGS
 
-* ## Dangerous Permissions:
+* ### Dangerous Permissions:
 
 
 * READ_CALENDAR
