@@ -39,7 +39,6 @@
 
 * ### Dangerous Permissions:
 
-
 * READ_CALENDAR
 * WRITE_CALENDAR
 * CAMERA
