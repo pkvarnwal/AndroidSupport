@@ -10,7 +10,7 @@ tags:
 author: Prinsu-kumar
 ---
 
-### Introduction
+ ### Introduction
 
 `Mitmproxy` is an interactive man-in-the-middle proxy for HTTP and HTTPS with a console
 interface.
