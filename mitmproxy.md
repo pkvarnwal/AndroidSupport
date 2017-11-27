@@ -19,7 +19,6 @@ interface.
 
 `Mitmweb` is a web-based interface for mitmproxy.
 
-
 ### Mitmproxy
 
 Mitmproxy is a console tool that allows interactive examination and modification
