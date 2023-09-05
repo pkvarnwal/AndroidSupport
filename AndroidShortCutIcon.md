@@ -6,7 +6,7 @@ Type=Application
 Terminal=false
 Icon=/home/angel/Android_IDE/android-studio/bin/studio.png
 Exec=sh /home/angel/Android_IDE/android-studio/bin/studio.sh
-Name=Android Studio
+Name=Android Studio 
 
 * Exit from above file and save.
 
