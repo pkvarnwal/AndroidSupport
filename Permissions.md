@@ -1,8 +1,8 @@
 ## Permissions
 
 There are two types of permission we provides in Android development:
-## 1. Normal Permission: Android device do not ask from the user for these types of permission.
-## 2. Dangerous Permission: Android device ask from the user to use these permissions(Location, Camera, READ_FILE etc)
+### 1. Normal Permission: Android device do not ask from the user for these types of permission.
+### 2. Dangerous Permission: Android device ask from the user to use these permissions(Location, Camera, READ_FILE etc)
 
  ### Normal permissions:
 
