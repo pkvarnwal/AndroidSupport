@@ -6,7 +6,7 @@ There are two types of permission we provides in Android development:
 
  ### Normal permissions:
 
-*ACCESS_LOCATION_EXTRA_COMMANDS
+* ACCESS_LOCATION_EXTRA_COMMANDS
 * ACCESS_NETWORK_STATE
 * ACCESS_NOTIFICATION_POLICY
 * ACCESS_WIFI_STATE
