@@ -1,0 +1,47 @@
+In this article, we are going to dig deep about ViewModel and its working in the following sequence:
+1. What is ViewModel ?
+2.Advantages of ViewModel
+3.How it works under the hood ?
+1.What is ViewModel
+ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way.It is the main component in the MVVM architecture.
+ViewModel can be created with activity context or fragment context.When a ViewModel object is created, it is stored inside Activity OR FragmentManager.
+2.Advantages of using View Model
+UI data store and share : Viewmodel holds all the UI data which are exposed to UI handling classes via live data. These data can be shared between different fragments within an Activity scope.
+Survive rotations and retains data : It survive the rotation process when current instance of activity is destroyed and new one is created so all the data it contains remains there.
+Lifecycle Awareness :Viewmodel is lifecycle aware. It is automatically cleared when the lifecycle they are observing gets permanently destroyed.
+Interesting Question 1: when a device is rotated from portrait to landscape or vice versa, activity is destroyed and a new instance is created then how is this ViewModel instance still the same?
+Let’s try to understand this:
+To create a viewmodel object, ViewModelProvider class is required.
+ViewModelProvider is the utility class which is used to create the instance of viewmodel in the following way.
+Create a ViewModelProvider instance
+Get the desired viewmodel from the viewmodel provider object
+Creation of ViewModelProvider
+
+To create the object of the viewmodel provider, two arguments are passed in the constructor.
+1.ViewModelStoreOwner : it is an interface.It has just one method which returns the ViewModelStore.
+By default Activity and Fragment are always viewmodel store owner because their parent classes in Android SDK implement the ViewModelStoreOwner interface. (ComponentActivity.java and Fragment.java )
+2.Factory : It is a nested interface in the ViewModelProvider class and is used to manufacture viewmodel objects.
+So now let’s create the instance of viewmodel provider
+
+If the factory is not passed then the default factory is created. Custom factory can be created for the parameterized viewmodel.
+So now we have instance of viewmodel provider, 
+Now let’s get our viewmodel object
+
+As we can see, we simply just called the get(arg) method with the desired viewmodel class reference and our viewmodel object was created.
+So all the magic happens in this get method
+Let’s understand this
+
+This method gets the canonical name of the viewmodel class,creates a key by appending DEFAULT_KEY then it calls the another get function which takes the key and viewmodel class reference
+
+This method checks the viewmodel instance in the viewmodel store first.If the viewmodel instance is there in the viewmodelstore then it simply returns that instance .If viewmodel instance is not there then it uses the factory to create the new instance and saves that instance in viewmodel store and then it return the viewmodel instance.
+This viewmodel store is linked to ViewModelStoreOwner so our activity/fragment has their own viewmodel store.
+It is ViewModelStore which stores the viewmodel and is retained when the rotation occurs and which returns the same viewmodel instance in the new activity instance.
+Interesting Question 2: Viewmodel store is linked to activity / fragment and when in the process of rotation current instance is destroyed and new instance is created then how this ViewModelStore object is still the same?
+Let’s know about this magic
+ViewModelStoreOwner is an interface. ComponentActivity implements this interface.
+
+Let’s go through the implementation of method
+
+In above implementation , we can see that in the new activity object when viewmodel store is null then it first checks with the NonConfigurationInstance which returns the previous activity’s viewmodel store.
+If activity is being created for the first time then always new viewmodel store objects will be created.
+So It is NonConfigurationInstance object which is passed from old destroyed activity to newly created activity when rotations happens.It contains all the non-configuration related information including viewmodel store which contains the viewmodel of old activity object.
