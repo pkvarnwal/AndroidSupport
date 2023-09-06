@@ -11,7 +11,7 @@
 * ```<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapp">
     <permission android:name="my_custom_permission_name"
-                android:protectionLevel="signature" />```
+                android:protectionLevel="signature" />
         
 ### C. Non-exported content providers —
         Unless you intend to send data from your app to other apps, explicitly disallow other apps to access your ContentProvider in manifest using android:exported=”false”(by default it is “true” for Android version lower than 4.4 ).
