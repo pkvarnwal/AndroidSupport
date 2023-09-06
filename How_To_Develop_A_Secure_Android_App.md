@@ -2,10 +2,10 @@
 
 ## 1. Maintain secure communication with other apps
 ### A. 
-<h2> Use Implicit Intents</h2> to show app chooser that provides option to user to launch at least two possible apps on the device for the requested action. This allows users to transfer sensitive information to the app that they trust.
+<h3> Use Implicit Intents</h3> to show app chooser that provides option to user to launch at least two possible apps on the device for the requested action. This allows users to transfer sensitive information to the app that they trust.
 
-### B. Apply signature-based permissions
-while sharing data between two apps that is controlled by you. These permissions do not need user confirmation, but instead it checks that the apps accessing the data are signed using the same signing key. Hence offer more streamlined and secure user experience.
+### B. 
+<h3> Apply signature-based permissions<h3/> while sharing data between two apps that is controlled by you. These permissions do not need user confirmation, but instead it checks that the apps accessing the data are signed using the same signing key. Hence offer more streamlined and secure user experience.
 
 <h2><manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapp">
